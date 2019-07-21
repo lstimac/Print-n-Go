@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Print n\' Go</string>
+    <string name="title_activity_maps">Karta</string>
+    <string name="action_settings">Odabir iz liste</string>
+    <string name="loading">Učitavanje</string>
+    <string name="signed_in_fmt">Ulogirani ste</string>
+    <string name="signed_out">Odlogirani ste.</string>
+    <string name="registracija"><u>Registriraj se</u></string>
+    <string name="title_activity_register">Registracija računa</string>
+
+</resources>

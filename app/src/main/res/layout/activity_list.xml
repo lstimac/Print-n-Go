@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/master_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:gravity="top|center"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/editTextFilePath"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:editable="false"
+                android:ems="10"
+                android:hint="Odaberi datoteku s uređaja"
+                android:inputType="none" />
+
+            <Button
+                android:id="@+id/buttonSendFile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:onClick="selectFile"
+                android:text="..." />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/label_postavke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Osnovne postavke ispisa:"
+        android:textSize="15dp" />
+
+    <LinearLayout
+        android:id="@+id/layout_postavke"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/editTextPaperCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Broj kopija (1)"
+            android:inputType="number"
+            android:imeOptions="actionDone"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxInColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="U Boji" />
+
+        <CheckBox
+            android:id="@+id/checkBoxBothSides"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Obostrano" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/label_interval_ispisa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Što iz datoteke želite printati?"
+        android:textSize="15dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layout_interval_ispisa"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="5">
+
+        <RadioGroup
+            android:id="@+id/radioGroupIntervalIspisa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonPrintAll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sve" />
+
+            <RadioButton
+                android:id="@+id/radioButtonPrintPart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dio" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/editTextStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Početak"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textViewMinus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="-"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/editTextEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.7"
+            android:ems="10"
+            android:hint="Kraj"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/label_postavke_uveza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Postavke uveza:"
+        android:textSize="15dp"
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:id="@+id/Error_stranica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layout_postavke_uveza"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <RadioGroup
+            android:id="@id/radioGroupUvez"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/radioButtonBezUveza"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bez uveza" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMekiUvez"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Meki uvez" />
+
+            <RadioButton
+                android:id="@+id/radioButtonTvrdiUvez"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tvrdi uvez" />
+        </RadioGroup>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/previous_postavke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Natrag"
+            android:background="@drawable/button_previous_next"
+            android:layout_marginRight="15dp"/>
+
+        <Button
+            android:id="@+id/next_postavke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dalje"
+            android:background="@drawable/button_previous_next"/>
+
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#9e9e9e"
+        android:layout_marginTop="15dp"></View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+        <Spinner
+            android:id="@+id/spinnerPrintList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1.55"
+            android:spinnerMode="dialog"
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:gravity="center">
+
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:background="@drawable/search_karta"
+                android:clickable="true"
+                android:onClick="viewMap" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#9e9e9e"
+        android:layout_marginTop="15dp"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/textViewSelectedShop"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:layout_weight="0.15" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.15"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewBrojStranica"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5" />
+
+                <TextView
+                    android:id="@+id/textViewBrojKopija"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.15"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewSelectedPagesStart"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    />
+
+                <TextView
+                    android:id="@+id/textViewSelectedPagesEnd"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textViewShowData"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.45" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewShowPDF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:srcCompat="@color/common_google_signin_btn_text_dark_default" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
