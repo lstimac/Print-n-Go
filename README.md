@@ -20,3 +20,7 @@ Application allows users to search for all copy shops from Google map or from a 
             <img src="/images/map.png" width="70%" /></td>
     </tr>
 </table>
+
+table, tr, td {
+    border: none;
+}
