@@ -3,7 +3,7 @@ Student project created for Android based smartphones.
 Application allows users to search for all copy shops from Google map or from a list in city of Rijeka, Croatia. User can send a document to the chosen copy shop with all selected features (black and white or color, double sided pages, a choice between hard/soft copy and more) and get a notification when the printed document is ready.
 
 
-<table class="style1">
+<table border='1' style='border-collapse:collapse'>
     <tr>
         <td class="style8" align="center">
             <img src="/images/login.png" width="70%" /></td>
@@ -12,7 +12,7 @@ Application allows users to search for all copy shops from Google map or from a 
     </tr>
 </table>
 
-<table class="style1">
+<table border='1' style='border-collapse:collapse'>
     <tr>
         <td class="style8" align="center">
             <img src="/images/order.png" width="70%" /></td>
