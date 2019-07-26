@@ -5,9 +5,9 @@ Application allows users to search for all copy shops from Google map or from a 
 
 <table style="border:none;>
     <tr>
-        <td style="border:none; align="center">
+        <td>
             <img src="/images/login.png" width="70%" /></td>
-        <td style="border:none;>
+        <td>
             <img src="/images/menu.png" width="70%" /></td>
     </tr>
 </table>
