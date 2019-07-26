@@ -21,6 +21,4 @@ Application allows users to search for all copy shops from Google map or from a 
     </tr>
 </table>
 
-table, tr, td {
-    border: none;
-}
+
