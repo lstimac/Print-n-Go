@@ -6,8 +6,8 @@ Application allows users to search for all copy shops from Google map or from a 
 <table class="style2">
     <tr>
         <td class="style8" align="center">
-            <img src="/images/login.png" width="50%" /></td>
+            <img src="/images/login.png" width="70%" /></td>
         <td class="style8">
-            <img src="/images/menu.png" width="50%" /></td>
+            <img src="/images/menu.png" width="70%" /></td>
     </tr>
 </table>
